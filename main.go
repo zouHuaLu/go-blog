@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import "net/http"
 
 func main() {
-	fmt.Printf("hello world")
+	server := http.Server{
+		Addr: "127.0.0.1:8899",
+	}
+
+	err := server.ListenAndServe()
+	if err != nil {
+	}
 }
